@@ -1,0 +1,18 @@
+{
+  "name": "artesania-web",
+  "description": "Proyecto compu visual",
+  "main": "server.js",
+  "authors": [
+    "Diego"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/diego11404/artesaniaWeb",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {}
+}
