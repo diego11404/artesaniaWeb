@@ -1,0 +1,6 @@
+{
+  "mongo":{
+    "database" : "shoptest",
+    "host" : "localhost"
+  }
+}

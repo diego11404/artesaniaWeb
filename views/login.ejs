@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<% include head%>
+	</head>
+    <body>
+			<%include header%>
+		<div id="wrapper" class="container">
+			<%include headerNav%>
+			<section class="header_text sub">
+			<img class="pageBanner" src="img/pageBanner.png" alt="New products" >
+				<h4><span>Iniciar Sesion</span></h4>
+			</section>
+			<section class="main-content">
+				<div class="row">
+					<div class="span5">
+						<h4 class="title"><span class="text"><strong>Inicia Sesion</strong> </span></h4>
+						<form method="POST" action="/auth/login">
+							<input type="hidden" name="next" value="/">
+							<fieldset>
+								<div class="control-group">
+									<label class="control-label">Nombre Usuario</label>
+									<div class="controls">
+										<input type="text" name="username"placeholder="Ingresa Nombre de usuario" id="username" class="input-xlarge" required>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">Contraseña</label>
+									<div class="controls">
+										<input type="password"  name="password" placeholder="Ingresa tu Contraseña" id="password" class="input-xlarge" required>
+									</div>
+								</div>
+								<div class="control-group">
+									<input tabindex="3" class="btn btn-inverse large" type="submit" value="Iniciar Sesion">
+									<hr>
+									<p class="reset">Crear <a tabindex="4" href="/auth/join" title="Crear Cuenta">Cuenta</a></p>
+								</div>
+							</fieldset>
+						</form>
+					</div>
+				</div>
+			</section>
+			<% include footer%>
+		</div>
+		<script src="js/common.js"></script>
+		<script>
+			$(document).ready(function() {
+				$('#checkout').click(function (e) {
+					document.location.href = "checkout.html";
+				})
+			});
+		</script>
+    </body>
+</html>

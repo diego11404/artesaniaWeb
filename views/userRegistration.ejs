@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<% include head%>
+	</head>
+    <body>
+			<%include header%>
+		<div id="wrapper" class="container">
+			<%include headerNav%>
+			<section class="header_text sub">
+			<img class="pageBanner" src="img/pageBanner.png" alt="New products" >
+				<h4><span>Registrate</span></h4>
+			</section>
+			<section class="main-content">
+				<div class="row">
+					<div class="span7">
+						<h4 class="title"><span class="text"><strong>Registro</strong>  </span></h4>
+						<form action="/auth/join" method="POST" class="form-stacked">
+							<fieldset>
+									<div class="control-group">
+											<label class="control-label">Email address:</label>
+											<div class="controls">
+												<input type="email" name="email" placeholder="email" class="input-xlarge" required>
+											</div>
+									</div>
+									<div class="control-group">
+											<label class="control-label">Nombre Usuario:</label>
+											<div class="controls">
+												<input type="text" name="username" placeholder="Nombre de Usuario" class="input-xlarge" required>
+											</div>
+									</div>
+								<div class="control-group">
+									<label class="control-label">Nombre:</label>
+									<div class="controls">
+										<input type="text" name="name" placeholder="Nombre" class="input-xlarge" required>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">Apellido:</label>
+									<div class="controls">
+										<input type="text" name="lastName" placeholder="Apellidos" class="input-xlarge"required>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label">Contraseña:</label>
+									<div class="controls">
+										<input type="password" name="password" placeholder="contraseña" class="input-xlarge"required>
+									</div>
+								</div>
+								<div class="actions">
+									<input tabindex="9" class="btn btn-inverse large" type="submit" value="Crear Cuenta">
+								</div>
+								<hr>
+								<p class="reset">Iniciar <a tabindex="4" href="/auth/login" title="Iniciar sesion">Sesion</a></p>
+							</fieldset>
+						</form>
+					</div>
+				</div>
+			</section>
+			<% include footer%>
+		</div>
+		<script src="js/common.js"></script>
+		<script>
+			$(document).ready(function() {
+				$('#checkout').click(function (e) {
+					document.location.href = "checkout.html";
+				})
+			});
+		</script>
+    </body>
+</html>
