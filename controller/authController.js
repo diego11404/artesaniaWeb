@@ -2,7 +2,8 @@ const authModel = require('../model/authModel'),
       authM = new authModel();
 class CAuthController{
   getJoin(req,res,next){
-    res.render('userRegistration',{title : "Sign in", message :req.query.message})
+    res.render('userRegistration',{title : "Sign in"})
+    
   }
   getLogin(req,res,next){
     res.render('login',{title: "Login"})
@@ -31,7 +32,7 @@ class CAuthController{
           res.redirect('/');
         }else{
           console.log("NO LOGIN");
-          res.redirect('/login');
+          res.redirect('/auth/login');
         }
     })
   }
