@@ -8,59 +8,13 @@
 		<div id="wrapper" class="container">
 			<% include headerNav%>
 			<section class="header_text sub">
-			<img class="pageBanner" src="img/pageBanner.png" alt="New products" >
-				<h4><span>Check Out</span></h4>
+			<img class="pageBanner" src="img/banner.jpg" alt="Peru"  >
+				<h4><span><%= user%></span></h4>
 			</section>
 			<section class="main-content">
 				<div class="row">
 					<div class="span12">
 						<div class="accordion" id="accordion2">
-							<div class="accordion-group">
-								<div class="accordion-heading">
-									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">Checkout Opciones</a>
-								</div>
-								<div id="collapseOne" class="accordion-body in collapse">
-									<div class="accordion-inner">
-										<div class="row-fluid">
-											<div class="span6">
-												<h4>Nuevo Cliente</h4>
-												<p>Al crear una cuenta, podrá comprar más rápido, estar actualizado sobre el estado de un pedido y realizar un seguimiento de los pedidos que realizó anteriormente..</p>
-												<form action="#" method="post">
-													<fieldset>
-														<label class="radio" for="register">
-															<input type="radio" name="account" value="register" id="register" checked="checked">Registrarse
-														</label>
-														
-														<br>
-														<button class="btn btn-inverse" data-toggle="collapse" data-parent="#collapse2">Continue</button>
-													</fieldset>
-												</form>
-											 </div>
-											 <div class="span6">
-												<h4>Retornando</h4>
-												<p>Yo soy cliente</p>
-												<form action="#" method="post">
-													<fieldset>
-														<div class="control-group">
-															<label class="control-label">Nombre Usuario</label>
-															<div class="controls">
-																<input type="text" placeholder="Enter your username" id="username" class="input-xlarge">
-															</div>
-														</div>
-														<div class="control-group">
-															<label class="control-label">Contraseña</label>
-															<div class="controls">
-															<input type="password" placeholder="Enter your password" id="password" class="input-xlarge">
-															</div>
-														</div>
-														<button class="btn btn-inverse">Continuar</button>
-													</fieldset>
-												</form>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
 							<div class="accordion-group">
 								<div class="accordion-heading">
 									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">Cuenta &amp; Detalles de Pago</a>
@@ -139,24 +93,7 @@
 									</div>
 								</div>
 							</div>
-							<div class="accordion-group">
-								<div class="accordion-heading">
-									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">Confirmar Orden</a>
-								</div>
-								<div id="collapseThree" class="accordion-body collapse">
-									<div class="accordion-inner">
-										<div class="row-fluid">
-											<div class="control-group">
-												<label for="textarea" class="control-label">Comentario</label>
-												<div class="controls">
-													<textarea rows="3" id="textarea" class="span12"></textarea>
-												</div>
-											</div>
-											<button class="btn btn-inverse pull-right">Confirmar</button>
-										</div>
-									</div>
-								</div>
-							</div>
+						
 						</div>
 					</div>
 				</div>

@@ -7,7 +7,7 @@ router
   .get('/product-detail',ic.getProductDetail)
   .get('/products',ic.getProduct)
   .get('/contact',ic.getContact)
-  .get('/checkout',ic.getCheckout) 
+  .get('/account',ic.getAccount) 
   .get('/shopcart',ic.getShopcart)
 
 module.exports= router;

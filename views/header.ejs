@@ -8,10 +8,12 @@
     <div class="span8">
       <div class="account pull-right">
         <ul class="user-menu">
-          <li><a href="#">Mi Cuenta</a></li>
-          <li><a href="/shopcart">Carrito</a></li>
-          <li><a href="/checkout">Checkout</a></li>
-          <li><a href="/auth/login">Sign in</a></li>
+          <% if(user){ %>
+            <li><a href="/account">Hola ,<%= user%></a></li>
+          <% }else{%>
+            <li><a href="/account">Mi Cuenta</a></li>
+            <li><a href="/auth/login">Sign in</a></li>
+          <%}%>
           <li><a href="/auth/logout">Log Out</a></li>
         </ul>
       </div>

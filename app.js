@@ -5,13 +5,15 @@ const express = require('express'),
       serveStatic = require('serve-static'),
       morgan = require('morgan'),
       session = require('express-session'),
+      error = require('./middleware/error'),
       favico = require('serve-favicon')(`${__dirname}/public/img/icono.png`),
       auth = require('./router/authRouter'),
       router = require('./router/indexRouter'),
       port = process.env.PORT || 9090;
       
 let app = express();
-app.set('views',path.join(__dirname,'views'))
+app.use(session({ secret:'true-secret', saveUninitialized: true, resave: true }))
+   .set('views',path.join(__dirname,'views'))
    .set('view engine','ejs')
    .set('port',port)
    .use(body_parser.json())
@@ -22,5 +24,5 @@ app.set('views',path.join(__dirname,'views'))
    .use(favico)
    .use(morgan('dev'))
    .use(router)
-
+   .use(error.error404)
 module.exports = app;
