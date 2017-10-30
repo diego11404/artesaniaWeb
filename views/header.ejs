@@ -1,7 +1,7 @@
 <div id="top-bar" class="container">
   <div class="row">
     <div class="span4">
-      <form method="GET" class="glyphicon glyphicon-search" action="/">
+      <form method="GET" class="glyphicon glyphicon-search" action="/products">
         <input type="text" class="input-block-level search-query" Placeholder="Buscar">
       </form>
     </div>
@@ -9,7 +9,7 @@
       <div class="account pull-right">
         <ul class="user-menu">
           <% if(user){ %>
-            <li><a href="/account">Hola ,<%= user%></a></li>
+            <li><a href="/account">Hola ,<%= user.name%></a></li>
           <% }else{%>
             <li><a href="/account">Mi Cuenta</a></li>
             <li><a href="/auth/login">Sign in</a></li>

@@ -9,5 +9,7 @@ router
   .get('/contact',ic.getContact)
   .get('/account',ic.getAccount) 
   .get('/shopcart',ic.getShopcart)
+  .get('/interactivo',ic.getInteractivo)
+  
 
 module.exports= router;
