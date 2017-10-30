@@ -10,7 +10,6 @@ const express = require('express'),
       auth = require('./router/authRouter'),
       router = require('./router/indexRouter'),
       port = process.env.PORT || 9090;
-      
 let app = express();
 app.use(session({ secret:'true-secret', saveUninitialized: true, resave: true }))
    .set('views',path.join(__dirname,'views'))
@@ -25,4 +24,5 @@ app.use(session({ secret:'true-secret', saveUninitialized: true, resave: true })
    .use(morgan('dev'))
    .use(router)
    .use(error.error404)
+   console.log("deploy")
 module.exports = app;
