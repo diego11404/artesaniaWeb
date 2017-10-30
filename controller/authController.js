@@ -13,7 +13,7 @@ class CAuthController{
     if(req.session.username)
       res.redirect('/')
     else
-    res.render('login',{title: "Login" , user: ""})
+    res.render('login',{title: "Login" , user: "", error: ""})
   }
   postJoin(req,res,next){
     let user ={
@@ -23,7 +23,6 @@ class CAuthController{
       lastName: req.body.lastName,
       password:req.body.password
     }
-    console.log(user);
     authM.registration(user,(data)=>{
       res.redirect(`/?message=El usuario ${user.name} ${user.lastName} ha sido creado`)
       console.log(data, '<==Creado');
@@ -35,10 +34,10 @@ class CAuthController{
       password : req.body.password
     }
     authM.getUser(user,data=>{
-        req.session.username = (data!=null) ?  (req.session.name = data.name,data.username ) : null;
-        
+        req.session.username = (data!=null) ?  (req.session.name = data,data.username ) : null;
         console.log(req.session)
-        return (req.session.username) ? res.render('index',{title: "Artesania Perú",message : req.query.message, user : req.session.name }) : error.error401(req,res,next)
+        return (req.session.username) ? res.render('index',{title: "Artesania Perú",message : req.query.message, user : req.session.name }) 
+        : res.render('login',{title : "Sign in", user: "", error:"Usuario o clave incorrecta"})
     })
   }
   getLogout(req,res,next){

@@ -9,7 +9,7 @@
 			<% include headerNav%>
 			<section class="header_text sub">
 			<img class="pageBanner" src="img/banner.jpg" alt="Peru"  >
-				<h4><span><%= user%></span></h4>
+				<h4><span><%= user.name%></span></h4>
 			</section>
 			<section class="main-content">
 				<div class="row">
@@ -17,9 +17,9 @@
 						<div class="accordion" id="accordion2">
 							<div class="accordion-group">
 								<div class="accordion-heading">
-									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">Cuenta &amp; Detalles de Pago</a>
+									<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">Cuenta</a>
 								</div>
-								<div id="collapseTwo" class="accordion-body collapse">
+								<div id="collapseOne" class="accordion-body collapse">
 									<div class="accordion-inner">
 										<div class="row-fluid">
 											<div class="span6">
@@ -27,65 +27,19 @@
 												<div class="control-group">
 													<label class="control-label">Nombres</label>
 													<div class="controls">
-														<input type="text" placeholder="" class="input-xlarge">
+														<input type="text" name="name" value='<%= dataUser.name%>' placeholder="Nombres" class="input-xlarge">
 													</div>
 												</div>
 												<div class="control-group">
 													<label class="control-label">Apellidos</label>
 													<div class="controls">
-														<input type="text" placeholder="" class="input-xlarge">
+														<input type="text" name="lastName" value='<%= dataUser.lastName%>' placeholder="Apellidos" class="input-xlarge">
 													</div>
 												</div>
 												<div class="control-group">
 													<label class="control-label">Direccion Correo</label>
 													<div class="controls">
-														<input type="text" placeholder="" class="input-xlarge">
-													</div>
-												</div>
-												<div class="control-group">
-													<label class="control-label">Telefono</label>
-													<div class="controls">
-														<input type="text" placeholder="" class="input-xlarge">
-													</div>
-												</div>
-											</div>
-											<div class="span6">
-												<h4>Tu Direccion</h4>
-												<div class="control-group">
-													<label class="control-label"><span class="required">*</span>Direccion:</label>
-													<div class="controls">
-														<input type="text" placeholder="" class="input-xlarge">
-													</div>
-												</div>
-												<div class="control-group">
-													<label class="control-label">Referencia:</label>
-													<div class="controls">
-														<input type="text" placeholder="" class="input-xlarge">
-													</div>
-												</div>
-												<div class="control-group">
-													<label class="control-label"><span class="required">*</span> Codigo Postal:</label>
-													<div class="controls">
-														<input type="text" placeholder="" class="input-xlarge">
-													</div>
-												</div>
-												<div class="control-group">
-													<label class="control-label"><span class="required">*</span> Departamento:</label>
-													<div class="controls">
-														<select class="input-xlarge">
-															<option value="">Seleccionar</option>
-															<option value="1">Lima</option>
-															<option value="2">Trujillo</option>
-															<option value="3">Cusco</option>
-															<option value="4">Ancash</option>
-															<option value="5">Tumbres</option>
-														</select>
-													</div>
-												</div>
-												<div class="control-group">
-													<label class="control-label"><span class="required">*</span> Ciudad:</label>
-													<div class="controls">
-														<input type="text" placeholder="" class="input-xlarge">
+														<input type="text" name="email" value='<%= dataUser.email%>' placeholder="Email" class="input-xlarge">
 													</div>
 												</div>
 											</div>
@@ -93,7 +47,60 @@
 									</div>
 								</div>
 							</div>
-						
+							<div class="accordion-group">
+									<div class="accordion-heading">
+										<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">Direccion de Envio</a>
+									</div>
+									<div id="collapseTwo" class="accordion-body collapse">
+										<div class="accordion-inner">
+											<div class="row-fluid">
+												<form method="POST" action="/auth/login">
+														<div class="span6">
+																<h4>Tu Direccion</h4>
+																<div class="control-group">
+																	<label class="control-label"><span class="required">*</span>Direccion:</label>
+																	<div class="controls">
+																		<input type="text" name="address" placeholder="Direccion" class="input-xlarge">
+																	</div>
+																</div>
+																<div class="control-group">
+																	<label class="control-label">Referencia:</label>
+																	<div class="controls">
+																		<input type="text" name="reference" placeholder="Referencia" class="input-xlarge">
+																	</div>
+																</div>
+																<div class="control-group">
+																		<label class="control-label"><span class="required">*</span> Ciudad:</label>
+																		<div class="controls">
+																			<input type="text" name="city" placeholder="Ciudad" class="input-xlarge">
+																		</div>
+																</div>
+																<div class="control-group">
+																		<label class="control-label"><span class="required">*</span> Departamento</label>
+																		<div class="controls">
+																				<input type="text" name="department" placeholder="Departamento" class="input-xlarge">
+																			</div>
+																</div>
+																<div class="control-group">
+																	<label class="control-label"><span class="required">*</span> Codigo Postal:</label>
+																	<div class="controls">
+																		<input type="text" name="postalcode" placeholder="Codigo Postal" class="input-xlarge">
+																	</div>
+																</div>
+																<div class="control-group">
+																		<label class="control-label"><span class="required">*</span>Telefono</label>
+																		<div class="controls">
+																			<input type="text" name="phone" placeholder="Telefono" class="input-xlarge">
+																		</div>
+																</div>
+															
+															</div>
+												</form>
+												
+											</div>
+										</div>
+									</div>
+								</div>
 						</div>
 					</div>
 				</div>

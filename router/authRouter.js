@@ -9,4 +9,5 @@ router
   .post('/auth/join',ac.postJoin)
   .post('/auth/login',ac.postLogin)
   .get('/auth/logout',ac.getLogout)
+  
   module.exports=router
