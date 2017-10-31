@@ -19,17 +19,36 @@ class CindexController{
   getContact(req,res,next){
     res.render('contact',{title: "Contacto" , user: req.session.name})
   }
+  //get account
   getAccount(req,res,next){
     if(req.session.username){
       let id = {
         _id : req.session.name._id,
       }
-      im.dataUser(id,(data)=>{
+      im.getDataUser(id,(data)=>{
         res.render('account',{title: "Cuenta", user: req.session.name, dataUser: data})
       })
     }
     else res.redirect('/auth/login')
     }
+    /// put Account
+  putAccount(req,res,next){
+    console.log(req.params.id)
+    if (req.session.username) {
+      let opts = {
+        _id: (req.body._id || null),
+        email: req.body.email,
+        name: req.body.name,
+        lastName: req.body.lastName,
+      }
+      im.updateDataUser(opts, (user) => {
+        req.session.name = user;
+        res.render('account',{title: "Cuenta", user: req.session.name, dataUser: user})
+      })
+    } else {
+      res.redirect('/')
+    }
+  }
   getShopcart(req,res,next){
     if(req.session.username){ 
       res.render('shopcart',{title: "Carrito", user: req.session.name})    

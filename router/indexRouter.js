@@ -10,6 +10,7 @@ router
   .get('/account',ic.getAccount) 
   .get('/shopcart',ic.getShopcart)
   .get('/interactivo',ic.getInteractivo)
+  .put('/account/:id',ic.putAccount)
   
 
 module.exports= router;

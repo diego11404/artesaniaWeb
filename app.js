@@ -7,6 +7,7 @@ const express = require('express'),
       session = require('express-session'),
       error = require('./middleware/error'),
       favico = require('serve-favicon')(`${__dirname}/public/img/icono.png`),
+      methodOverride = require('express-method-override')('_method'),
       auth = require('./router/authRouter'),
       router = require('./router/indexRouter'),
       port = process.env.PORT || 9090;
@@ -19,9 +20,12 @@ app.use(session({ secret:'true-secret', saveUninitialized: true, resave: true })
    .use(serveStatic(path.join(__dirname, 'public')))
    .use(express.static(path.join(__dirname,'public')))
    .use(body_parser.urlencoded({ extended: false }))
+   .use(methodOverride)
    .use(auth)
    .use(favico)
    .use(morgan('dev'))
    .use(router)
    .use(error.error404)
+
+
 module.exports = app;
